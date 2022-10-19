@@ -1,0 +1,9 @@
+@import "app.variable";
+
+body {
+  font-family: $font-family-base;
+
+  h1 {
+    font-family: $font-family-special;
+  }
+}

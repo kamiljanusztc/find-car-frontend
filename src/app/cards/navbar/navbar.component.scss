@@ -1,0 +1,31 @@
+@import "../../app.component";
+
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+
+  .navbar-collapse {
+    justify-content: right;
+  }
+
+  .navbar-brand {
+    font-family: $font-family-special;
+    font-size: 1.5rem;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  li {
+    a {
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      padding-left: 1.5rem;
+      font-size: .9rem;
+    }
+  }
+}

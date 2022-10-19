@@ -1,0 +1,33 @@
+@import "../../app.component";
+
+video {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(50%);
+}
+
+.video-content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  color: $white;
+  text-align: center;
+
+  h1 {
+    letter-spacing: .2rem;
+    font-size: 4rem;
+    font-family: $font-family-special;
+  }
+
+    p {
+      letter-spacing: .1rem;
+    }
+}

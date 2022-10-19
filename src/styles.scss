@@ -2,3 +2,35 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.container-fluid {
+  padding: 0;
+}
+
+section {
+  margin: 4rem 0;
+}
+
+.btn-primary {
+  white-space: nowrap;
+  font-size: .9rem;
+  border-radius: 50px;
+  padding: 8px 40px;
+  letter-spacing: .15rem;
+  font-family: 'Signika Negative', sans-serif;
+  margin: 15px;
+  text-align: -webkit-center;
+  display: inline-block;
+  transition: all 0.3s ease-in 0s;
+  text-decoration: none;
+  cursor: pointer;
+  color: $white;
+  background: $black;
+  border: none;
+
+  &:hover {
+    color: $black;
+    background: $white;
+  }
+}

@@ -11,6 +11,7 @@ import { ButtonSecondaryComponent } from './components/button-secondary/button-s
 import { ProductComponent } from './cards/product/product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { NavbarComponent } from './cards/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     ProjectComponent,
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,
-    ProductComponent
+    ProductComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

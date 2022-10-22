@@ -12,6 +12,11 @@ import { ProductComponent } from './cards/product/product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { NavbarComponent } from './cards/navbar/navbar.component';
+import { ClientListComponent } from './components/client-list/client-list.component';
+import { ClientFormComponent } from './components/client-form/client-form.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {ClientService} from "./services/client.service";
 
 @NgModule({
   declarations: [
@@ -22,15 +27,19 @@ import { NavbarComponent } from './cards/navbar/navbar.component';
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,
     ProductComponent,
-    NavbarComponent
+    NavbarComponent,
+    ClientListComponent,
+    ClientFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,6 +23,7 @@ import { RentListComponent } from './components/rent-list/rent-list.component';
 import { RentFormComponent } from './components/rent-form/rent-form.component';
 import {CarService} from "./services/car.service";
 import {RentService} from "./services/rent.service";
+import { SearchComponent } from './cards/search/search.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {RentService} from "./services/rent.service";
     CarListComponent,
     CarFormComponent,
     RentListComponent,
-    RentFormComponent
+    RentFormComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

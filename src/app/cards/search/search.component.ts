@@ -3,11 +3,11 @@ import {Car} from "../../model/car";
 import {CarService} from "../../services/car.service";
 
 @Component({
-  selector: 'app-car-list',
-  templateUrl: './car-list.component.html',
-  styleUrls: ['./car-list.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class CarListComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   @Input() model: string;
   @Input() productionYear: string;
@@ -19,8 +19,7 @@ export class CarListComponent implements OnInit {
 
   cars: Car[];
 
-  constructor(private carService: CarService) {
-  }
+  constructor(private carService: CarService) { }
 
   ngOnInit() {
     this.carService.findAll().subscribe(data => {

@@ -36,3 +36,19 @@
         </table>
     </div>
 </div>
+
+<div class="card-wrapper">
+    <ng-container *ngFor="let car of cars">
+        <app-product
+                [model]="car.model"
+                [productionYear]="car.productionYear"
+                [gearBox]="car.gearBox"
+                [fuelType]="car.fuelType"
+                [engine]="car.engine"
+                [carPower]="car.carPower"
+                [carStatus]="car.carStatus"
+        >
+
+        </app-product>
+    </ng-container>
+</div>

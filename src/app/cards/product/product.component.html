@@ -1,79 +1,15 @@
-<section class="container">
-
-    <div class="search" id="search">
-        <h2>SEARCH</h2>
-        <div class="bar row">
-            <div class="col-md-3">
-                <p>Brand</p>
-                <select class="form-select" aria-label="audi">
-                    <option selected>Mercedes</option>
-                    <option value="audi">Audi</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <p>Gearbox</p>
-                <select class="form-select" aria-label="automatic">
-                    <option selected>Automatic</option>
-                    <option value="manual">Manual</option>
-                    <option value="automatic">Automatic</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <p>Fuel</p>
-                <select class="form-select" aria-label="petrol">
-                    <option selected>Petrol</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="hybrid">Hybrid</option>
-                    <option value="electric">Electric</option>
-                    <option value="petrol">Petrol</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <p>Power</p>
-                <select class="form-select" aria-label="power">
-                    <option selected> +300 ps </option>
-                    <option value="100"> +100 ps </option>
-                    <option value="200"> +200 ps </option>
-                    <option value="300"> +300 ps </option>
-                </select>
-            </div>
-        </div>
-
-        <ul class="text-left list-inline py-3">
-            <li class="list-inline-item">
-                <a routerLink="/createclient" class="btn btn-primary">Crete client</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/clients" class="btn btn-primary">Client list</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/createcar" class="btn btn-primary">Create car</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/cars" class="btn btn-primary">Car list</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/createrent" class="btn btn-primary">Create rent</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/rents" class="btn btn-primary">Rent list</a>
-            </li>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.pexels.com/photos/193021/pexels-photo-193021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Find Car">
+    <div class="card-body">
+        <h5 class="card-title"><strong>{{model}}</strong></h5>
+        <ul>
+            <li><strong>Production year:</strong> {{productionYear}} r</li>
+            <li><strong>Gearbox:</strong> {{gearBox}}</li>
+            <li><strong>Fuel:</strong> {{fuelType}}</li>
+            <li><strong>Engine:</strong> {{engine}}</li>
+            <li><strong>Power:</strong> {{carPower}}</li>
+            <li><strong>Status:</strong> {{carStatus}}</li>
         </ul>
-        <router-outlet></router-outlet>
-
-        <div class="cards">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://images.pexels.com/photos/193021/pexels-photo-193021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Find Car">
-                <div class="card-body">
-                    <h5 class="card-title">Mercedes</h5>
-                    <p class="card-text">Sports cabrio</p>
-                    <a href="#" class="btn btn-primary">BOOK</a>
-                </div>
-            </div>
-
-        </div>
+        <a href="#" class="btn btn-primary">BOOK</a>
     </div>
-
-</section>
+</div>

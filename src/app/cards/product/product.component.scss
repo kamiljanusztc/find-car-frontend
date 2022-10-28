@@ -1,43 +1,25 @@
 @import "../../app.component";
 
-.search {
-  position: relative;
-  text-align: center;
-  margin: -15rem 0 3rem 0;
-  padding: 2rem 5rem;
-  box-shadow: $shadow;
-  border-radius: 8px;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  color: $white;
+.card {
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in 0s;
+  color: $black;
+  margin: 2rem;
+  text-align: left;
 
-  .bar {
-    border-radius: 8px;
-    background: $orange;
-    padding: 1rem;
-    color: $white;
+  .card-title {
+    font-family: $font-family-special;
+    text-transform: uppercase;
   }
 
-    h2 {
-      margin-bottom: 2rem;
-      font-family: $font-family-special;
-      letter-spacing: .2rem;
-    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
 
-  .cards {
-    margin: 3rem 0;
-
-    .card {
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s ease-in 0s;
-
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: $shadow;
-      }
-    }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow;
   }
 }

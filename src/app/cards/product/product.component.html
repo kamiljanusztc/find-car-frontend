@@ -41,8 +41,29 @@
             </div>
         </div>
 
-        <div class="cards">
+        <ul class="text-left list-inline py-3">
+            <li class="list-inline-item">
+                <a routerLink="/createclient" class="btn btn-primary">Crete client</a>
+            </li>
+            <li class="list-inline-item">
+                <a routerLink="/clients" class="btn btn-primary">Client list</a>
+            </li>
+            <li class="list-inline-item">
+                <a routerLink="/createcar" class="btn btn-primary">Create car</a>
+            </li>
+            <li class="list-inline-item">
+                <a routerLink="/cars" class="btn btn-primary">Car list</a>
+            </li>
+            <li class="list-inline-item">
+                <a routerLink="/createrent" class="btn btn-primary">Create rent</a>
+            </li>
+            <li class="list-inline-item">
+                <a routerLink="/rents" class="btn btn-primary">Rent list</a>
+            </li>
+        </ul>
+        <router-outlet></router-outlet>
 
+        <div class="cards">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="https://images.pexels.com/photos/193021/pexels-photo-193021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Find Car">
                 <div class="card-body">

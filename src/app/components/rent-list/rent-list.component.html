@@ -1,0 +1,38 @@
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date start</th>
+                <th scope="col">Date end</th>
+                <th scope="col">Rent status</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Is paid</th>
+                <th scope="col">Client</th>
+                <th scope="col">Car</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rent of rents">
+                <td>{{ rent.id }}</td>
+                <td>{{ rent.dateStart }}</td>
+                <td>{{ rent.dateEnd }}</td>
+                <td>{{ rent.rentStatus }}</td>
+                <td>{{ rent.cost }}</td>
+                <td>{{ rent.isPaid }}</td>
+                <td>{{ rent.client }}</td>
+                <td>{{ rent.car }}</td>
+                <td>
+                    <a type="submit" ><img [src]="'/assets/icons/icon-edit.svg'"></a>
+                </td>
+                <td>
+                    <a type="submit" ><img [src]="'/assets/icons/icon-trash.svg'"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

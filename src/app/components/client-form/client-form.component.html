@@ -1,4 +1,4 @@
-<div class="card my-5 card-form">
+<div class="card my-5 card-form" id="createclient">
     <div class="card-body">
         <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
             <div class="form-group">
@@ -7,10 +7,27 @@
                        class="form-control"
                        id="name"
                        name="name"
-                       placeholder="Enter your name"
+                       placeholder="Name"
                        required #name="ngModel">
             </div>
-            <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" [(ngModel)]="client.surname"
+                       class="form-control"
+                       id="surname"
+                       name="surname"
+                       placeholder="Surname"
+                       required #surname="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="login">Login</label>
+                <input type="text" [(ngModel)]="client.login"
+                       class="form-control"
+                       id="login"
+                       name="login"
+                       placeholder="Login"
+                       required #login="ngModel">
+            </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" [(ngModel)]="client.email"
@@ -19,10 +36,27 @@
                        name="email"
                        placeholder="Enter your email address"
                        required #email="ngModel">
-                <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" [(ngModel)]="client.phone"
+                       class="form-control"
+                       id="phone"
+                       name="phone"
+                       placeholder="Phone"
+                       required #phone="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="loginStatus">Login status</label>
+                <input type="text" [(ngModel)]="client.login"
+                       class="form-control"
+                       id="loginStatus"
+                       name="loginStatus"
+                       placeholder="Login status"
+                       required #loginStatus="ngModel">
             </div>
             <button type="submit" [disabled]="!clientForm.form.valid"
-                    class="btn btn-info">Submit</button>
+                    class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>

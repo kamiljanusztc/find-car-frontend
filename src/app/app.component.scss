@@ -13,3 +13,43 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.btn-primary {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: $black;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: $white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  justify-content: center;
+  margin: 0;
+  padding: .3rem 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+
+  &:active {
+    background-color: $orange;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+
+  &:focus, &:hover {
+    background-color: $orange;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}

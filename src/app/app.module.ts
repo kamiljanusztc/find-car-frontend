@@ -17,6 +17,12 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {ClientService} from "./services/client.service";
+import { CarListComponent } from './components/car-list/car-list.component';
+import { CarFormComponent } from './components/car-form/car-form.component';
+import { RentListComponent } from './components/rent-list/rent-list.component';
+import { RentFormComponent } from './components/rent-form/rent-form.component';
+import {CarService} from "./services/car.service";
+import {RentService} from "./services/rent.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +35,11 @@ import {ClientService} from "./services/client.service";
     ProductComponent,
     NavbarComponent,
     ClientListComponent,
-    ClientFormComponent
+    ClientFormComponent,
+    CarListComponent,
+    CarFormComponent,
+    RentListComponent,
+    RentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +49,7 @@ import {ClientService} from "./services/client.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [ClientService],
+  providers: [ClientService, CarService, RentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

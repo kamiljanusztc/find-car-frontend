@@ -1,0 +1,38 @@
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Model</th>
+                <th scope="col">Production year</th>
+                <th scope="col">Gearbox</th>
+                <th scope="col">Fuel type</th>
+                <th scope="col">Engine</th>
+                <th scope="col">Car power</th>
+                <th scope="col">Car status</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let car of cars">
+                <td>{{ car.id }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.productionYear }}</td>
+                <td>{{ car.gearBox }}</td>
+                <td>{{ car.fuelType }}</td>
+                <td>{{ car.engine }}</td>
+                <td>{{ car.carPower }}</td>
+                <td>{{ car.carStatus }}</td>
+                <td>
+                    <a type="submit" ><img [src]="'/assets/icons/icon-edit.svg'"></a>
+                </td>
+                <td>
+                    <a type="submit" ><img [src]="'/assets/icons/icon-trash.svg'"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

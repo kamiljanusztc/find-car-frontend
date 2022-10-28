@@ -1,0 +1,65 @@
+<div class="card my-5">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #carForm="ngForm">
+            <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" [(ngModel)]="car.model"
+                       class="form-control"
+                       id="model"
+                       name="model"
+                       placeholder="Model"
+                       required #model="ngModel">
+
+                <label for="productionYear">Production year</label>
+                <input type="text" [(ngModel)]="car.productionYear"
+                       class="form-control"
+                       id="productionYear"
+                       name="productionYear"
+                       placeholder="Production year"
+                       required #productionYear="ngModel">
+
+                <label for="gearBox">Gearbox</label>
+                <input type="text" [(ngModel)]="car.gearBox"
+                       class="form-control"
+                       id="gearBox"
+                       name="gearBox"
+                       placeholder="Gearbox"
+                       required #name="ngModel">
+
+                <label for="fuelType">Fuel type</label>
+                <input type="text" [(ngModel)]="car.fuelType"
+                       class="form-control"
+                       id="fuelType"
+                       name="fuelType"
+                       placeholder="Fuel type"
+                       required #fuelType="ngModel">
+
+                <label for="engine">Engine</label>
+                <input type="text" [(ngModel)]="car.engine"
+                       class="form-control"
+                       id="engine"
+                       name="engine"
+                       placeholder="Engine"
+                       required #engine="ngModel">
+
+                <label for="carPower">Car power</label>
+                <input type="text" [(ngModel)]="car.carPower"
+                       class="form-control"
+                       id="carPower"
+                       name="carPower"
+                       placeholder="Car power"
+                       required #carPower="ngModel">
+
+                <label for="carStatus">Car status</label>
+                <input type="text" [(ngModel)]="car.carStatus"
+                       class="form-control"
+                       id="carStatus"
+                       name="carStatus"
+                       placeholder="Car status"
+                       required #carStatus="ngModel">
+            </div>
+            <button type="submit" [disabled]="!carForm.form.valid"
+                    class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

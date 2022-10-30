@@ -18,6 +18,7 @@ export class CarListComponent implements OnInit {
   @Input() carStatus: string;
 
   cars: Car[];
+  modelValue: string;
 
   constructor(private carService: CarService) {
   }
@@ -26,6 +27,18 @@ export class CarListComponent implements OnInit {
     this.carService.findAll().subscribe(data => {
       this.cars = data;
     });
+  }
+
+  removeCar(car: Car) {
+    const index = this.cars.indexOf(car);
+    this.cars.splice(index, 1);
+  }
+
+  updateCar(car: Car) {
+    const index = this.cars.indexOf(car);
+    // this.cars.splice(index, 1, {id: (index + 1).toString(), model: 'Updated model', productionYear: 'Updated year', gearBox: 'Updated gearbox', fuelType: 'Updated petrol', engine: 'Updated engine', carPower: 'Updated power', carStatus: 'Updated status' });
+    this.cars.splice(index, 1, {id: (index + 1).toString(), model: this.modelValue[0], productionYear: 'Updated year', gearBox: 'Updated gearbox', fuelType: 'Updated petrol', engine: 'Updated engine', carPower: 'Updated power', carStatus: 'Updated status' });
+
   }
 
 }

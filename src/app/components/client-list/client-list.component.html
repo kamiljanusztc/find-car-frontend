@@ -27,7 +27,7 @@
                     <a type="submit" ><img [src]="'/assets/icons/icon-edit.svg'"></a>
                 </td>
                 <td>
-                    <a type="submit" ><img [src]="'/assets/icons/icon-trash.svg'"></a>
+                    <a type="submit" (click)="removeClient(client)"><img [src]="'/assets/icons/icon-trash.svg'"></a>
                 </td>
             </tr>
             </tbody>

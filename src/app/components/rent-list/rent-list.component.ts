@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RentService } from 'src/app/services/rent.service';
 import {Rent} from "../../model/rent";
+import {Car} from "../../model/car";
 
 @Component({
   selector: 'app-rent-list',
@@ -18,5 +19,10 @@ export class RentListComponent implements OnInit {
     this.rentService.findAll().subscribe(data => {
       this.rents = data;
     });
+  }
+
+  removeRent(rent: Rent) {
+    const index = this.rents.indexOf(rent);
+    this.rents.splice(index, 1);
   }
 }

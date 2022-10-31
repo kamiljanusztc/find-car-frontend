@@ -11,20 +11,24 @@
                 <th scope="col">Phone</th>
                 <th scope="col">Login status</th>
                 <th scope="col">Edit</th>
+                <th scope="col">Save</th>
                 <th scope="col">Remove</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let client of clients">
+            <tr (ngSubmit)="saveClient(client)" *ngFor="let client of clients">
                 <td>{{ client.id }}</td>
-                <td>{{ client.name }}</td>
-                <td>{{ client.surname }}</td>
-                <td>{{ client.login }}</td>
-                <td><a href="mailto:{{ client.email }}">{{ client.email }}</a></td>
-                <td>{{ client.phone }}</td>
-                <td>{{ client.loginStatus }}</td>
+                <td><input [(ngModel)]="client.name" [disabled]="isEnabled" placeholder="{{ client.name }}"></td>
+                <td><input [(ngModel)]="client.surname" [disabled]="isEnabled" placeholder="{{ client.surname }}"></td>
+                <td><input [(ngModel)]="client.login" [disabled]="isEnabled" placeholder="{{ client.login }}"></td>
+                <td><input [(ngModel)]="client.email" [disabled]="isEnabled" placeholder="{{ client.email }}"></td>
+                <td><input [(ngModel)]="client.phone" [disabled]="isEnabled" placeholder="{{ client.phone }}"></td>
+                <td><input [(ngModel)]="client.loginStatus" [disabled]="isEnabled" placeholder="{{ client.loginStatus }}"></td>
                 <td>
-                    <a type="submit" ><img [src]="'/assets/icons/icon-edit.svg'"></a>
+                    <a type="submit" (click)="editClient()"><img [src]="'/assets/icons/icon-edit.svg'"></a>
+                </td>
+                <td>
+                    <a type="submit" (click)="saveClient(client)"><img [src]="'/assets/icons/icon-save.svg'"></a>
                 </td>
                 <td>
                     <a type="submit" (click)="removeClient(client)"><img [src]="'/assets/icons/icon-trash.svg'"></a>

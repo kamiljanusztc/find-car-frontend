@@ -1,4 +1,4 @@
-<div class="card my-5">
+<div class="card my-5" id="rents">
     <div class="card-body">
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
@@ -12,21 +12,25 @@
                 <th scope="col">Client</th>
                 <th scope="col">Car</th>
                 <th scope="col">Edit</th>
+                <th scope="col">Save</th>
                 <th scope="col">Remove</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let rent of rents">
+            <tr (ngSubmit)="saveRent(rent)" *ngFor="let rent of rents">
                 <td>{{ rent.id }}</td>
-                <td>{{ rent.dateStart }}</td>
-                <td>{{ rent.dateEnd }}</td>
-                <td>{{ rent.rentStatus }}</td>
-                <td>{{ rent.cost }}</td>
-                <td>{{ rent.isPaid }}</td>
-                <td>{{ rent.client }}</td>
-                <td>{{ rent.car }}</td>
+                <td><input [(ngModel)]="rent.dateStart" [disabled]="isEnabled" placeholder="{{ rent.dateStart }}"></td>
+                <td><input [(ngModel)]="rent.dateEnd" [disabled]="isEnabled" placeholder="{{ rent.dateEnd }}"></td>
+                <td><input [(ngModel)]="rent.rentStatus" [disabled]="isEnabled" placeholder="{{ rent.rentStatus }}"></td>
+                <td><input [(ngModel)]="rent.cost" [disabled]="isEnabled" placeholder="{{ rent.cost }}"></td>
+                <td><input [(ngModel)]="rent.isPaid" [disabled]="isEnabled" placeholder="{{ rent.isPaid }}"></td>
+                <td><input [(ngModel)]="rent.client" [disabled]="isEnabled" placeholder="{{ rent.client }}"></td>
+                <td><input [(ngModel)]="rent.car" [disabled]="isEnabled" placeholder="{{ rent.car }}"></td>
                 <td>
-                    <a type="submit" ><img [src]="'/assets/icons/icon-edit.svg'"></a>
+                    <a type="submit" (click)="editRent()"><img [src]="'/assets/icons/icon-edit.svg'"></a>
+                </td>
+                <td>
+                    <a type="submit" (click)="saveRent(rent)"><img [src]="'/assets/icons/icon-save.svg'"></a>
                 </td>
                 <td>
                     <a type="submit" (click)="removeRent(rent)"><img [src]="'/assets/icons/icon-trash.svg'"></a>

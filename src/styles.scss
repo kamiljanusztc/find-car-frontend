@@ -34,3 +34,10 @@ section {
     background: $white;
   }
 }
+
+#clients, #cars, #rents {
+  input {
+    font-size: 12px;
+    max-width: 70px;
+  }
+}

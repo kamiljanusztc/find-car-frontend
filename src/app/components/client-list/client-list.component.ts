@@ -11,8 +11,10 @@ import {Car} from "../../model/car";
 export class ClientListComponent implements OnInit {
 
   clients: Client[];
+  isEnabled: boolean;
 
   constructor(private clientService: ClientService) {
+    this.isEnabled = true;
   }
 
   ngOnInit() {
@@ -24,5 +26,15 @@ export class ClientListComponent implements OnInit {
   removeClient(client: Client) {
     const index = this.clients.indexOf(client);
     this.clients.splice(index, 1);
+  }
+
+  editClient() {
+    this.isEnabled = false;
+  }
+
+  saveClient(client: Client) {
+    const index = this.clients.indexOf(client);
+    this.clients.splice(index, 1, {id: (index + 1).toString(), name: client.name, surname: client.surname, login: client.login, email: client.email, phone: client.phone, loginStatus: client.loginStatus });
+    this.isEnabled = true;
   }
 }

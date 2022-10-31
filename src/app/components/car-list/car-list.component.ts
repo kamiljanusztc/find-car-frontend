@@ -1,13 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Car} from "../../model/car";
 import {CarService} from "../../services/car.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-car-list',
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.scss']
 })
-export class CarListComponent implements OnInit {
+export class CarListComponent {
 
   @Input() model: string;
   @Input() productionYear: string;
@@ -19,8 +20,10 @@ export class CarListComponent implements OnInit {
 
   cars: Car[];
   modelValue: string;
+  isEnabled: boolean;
 
   constructor(private carService: CarService) {
+    this.isEnabled = true;
   }
 
   ngOnInit() {
@@ -34,11 +37,13 @@ export class CarListComponent implements OnInit {
     this.cars.splice(index, 1);
   }
 
-  updateCar(car: Car) {
-    const index = this.cars.indexOf(car);
-    // this.cars.splice(index, 1, {id: (index + 1).toString(), model: 'Updated model', productionYear: 'Updated year', gearBox: 'Updated gearbox', fuelType: 'Updated petrol', engine: 'Updated engine', carPower: 'Updated power', carStatus: 'Updated status' });
-    this.cars.splice(index, 1, {id: (index + 1).toString(), model: this.modelValue[0], productionYear: 'Updated year', gearBox: 'Updated gearbox', fuelType: 'Updated petrol', engine: 'Updated engine', carPower: 'Updated power', carStatus: 'Updated status' });
-
+  editCar() {
+    this.isEnabled = false;
   }
 
+  saveCar(car: Car) {
+    const index = this.cars.indexOf(car);
+    this.cars.splice(index, 1, {id: (index + 1).toString(), model: car.model, productionYear: car.productionYear, gearBox: car.gearBox, fuelType: car.fuelType, engine: car.engine, carPower: car.carPower, carStatus: car.carStatus });
+    this.isEnabled = true;
+  }
 }

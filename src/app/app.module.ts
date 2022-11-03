@@ -43,7 +43,6 @@ import { CommentsComponent } from './cards/comments/comments.component';
     RentListComponent,
     RentFormComponent,
     SearchComponent,
-    GasPriceComponent,
     CommentsComponent
   ],
   imports: [

@@ -7,3 +7,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.card-body {
+  width: 100%;
+  overflow-x: scroll;
+}

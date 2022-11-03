@@ -24,6 +24,8 @@ import { RentFormComponent } from './components/rent-form/rent-form.component';
 import {CarService} from "./services/car.service";
 import {RentService} from "./services/rent.service";
 import { SearchComponent } from './cards/search/search.component';
+import { GasPriceComponent } from './cards/gas-price/gas-price.component';
+import { CommentsComponent } from './cards/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { SearchComponent } from './cards/search/search.component';
     CarFormComponent,
     RentListComponent,
     RentFormComponent,
-    SearchComponent
+    SearchComponent,
+    GasPriceComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
+## Connection to the backend
+
+Clone backend part (https://github.com/kamiljanusztc/find-car-backend.git) from form https://github.com/kamiljanusztc/find-car-backend
+
+Remember to upgrade to Java 11 corretto
+
+Run FindCarBackendApplication
+
 ## Development server
+
+Install npm `npm install` (in case of problems: `npm install --force`)
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 

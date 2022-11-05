@@ -36,30 +36,30 @@
         </select>
       </div>
     </div>
-    <button (click)="searchCars()">Search</button>
-    <button (click)="resetFilters()">Reset filters</button>
+    <button class="btn btn-primary" (click)="searchCars()">Search</button>
+    <button class="btn btn-primary" (click)="resetFilters()">Reset filters</button>
 
     <ul class="text-left list-inline py-3">
       <li class="list-inline-item">
-        <a routerLink="/cars" class="btn btn-primary">Car list</a>
+        <a routerLink="/cars" class="btn btn-secondary">Car list</a>
       </li>
       <li class="list-inline-item">
-        <a routerLink="/createcar" class="btn btn-primary">Create car</a>
+        <a routerLink="/createcar" class="btn btn-secondary">Create car</a>
       </li>
       <li class="list-inline-item">
-        <a routerLink="/clients" class="btn btn-primary">Client list</a>
+        <a routerLink="/clients" class="btn btn-secondary">Client list</a>
       </li>
       <li class="list-inline-item">
-        <a routerLink="/createclient" class="btn btn-primary">Crete client</a>
+        <a routerLink="/createclient" class="btn btn-secondary">Crete client</a>
       </li>
       <li class="list-inline-item">
-        <a routerLink="/rents" class="btn btn-primary">Rent list</a>
+        <a routerLink="/rents" class="btn btn-secondary">Rent list</a>
       </li>
       <li class="list-inline-item">
-        <a routerLink="/createrent" class="btn btn-primary">Create rent</a>
+        <a routerLink="/createrent" class="btn btn-secondary">Create rent</a>
       </li>
       <li class="list-inline-item">
-        <a routerLink="/comments" class="btn btn-primary">Our comments</a>
+        <a routerLink="/comments" class="btn btn-secondary">Testimonials</a>
       </li>
     </ul>
     <router-outlet></router-outlet>

@@ -35,7 +35,7 @@ export class RentListComponent implements OnInit {
 
   saveRent(rent: Rent) {
     const index = this.rents.indexOf(rent);
-    this.rents.splice(index, 1, {id: (index + 1), dateStart: rent.dateStart, dateEnd: rent.dateEnd, rentStatus: rent.rentStatus, cost: rent.cost, isPaid: rent.isPaid, client: rent.client, car: rent.car });
+    this.rents.splice(index, 1, {id: (index + 1), dateStart: rent.dateStart, dateEnd: rent.dateEnd, rentStatus: rent.rentStatus, cost: rent.cost, paid: rent.paid, client: rent.client, car: rent.car });
     this.isEnabled = true;
   }
 }

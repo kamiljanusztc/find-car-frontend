@@ -19,19 +19,41 @@ section {
   padding: 8px 40px;
   letter-spacing: .15rem;
   font-family: 'Signika Negative', sans-serif;
-  margin: 15px;
+  margin: 30px 10px;
   text-align: -webkit-center;
   display: inline-block;
   transition: all 0.3s ease-in 0s;
   text-decoration: none;
   cursor: pointer;
   color: $white;
-  background: $black;
+  background: $orange;
   border: none;
 
   &:hover {
-    color: $black;
-    background: $white;
+    background: #ff8129;
+  }
+}
+
+.btn-secondary {
+  white-space: nowrap;
+  font-size: .9rem;
+  border-radius: 50px;
+  padding: 8px 20px;
+  letter-spacing: .15rem;
+  font-family: 'Signika Negative', sans-serif;
+  margin: 2px;
+  text-align: -webkit-center;
+  display: inline-block;
+  transition: all 0.3s ease-in 0s;
+  text-decoration: none;
+  cursor: pointer;
+  color: $black;
+  background: transparent;
+  border: 1px solid $black;
+
+  &:hover {
+    color: $white;
+    background: #484848;
   }
 }
 
@@ -40,4 +62,8 @@ section {
     font-size: 12px;
     max-width: 70px;
   }
+}
+
+.card-body {
+  color: $black;
 }

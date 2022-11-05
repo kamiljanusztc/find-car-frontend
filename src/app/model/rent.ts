@@ -7,7 +7,7 @@ export class Rent {
     dateEnd: string;
     rentStatus: string;
     cost: string;
-    isPaid: string;
+    paid: boolean;
     client: Client;
     car: Car;
 }

@@ -20,12 +20,20 @@ export class RentFormComponent {
       private router: Router,
       private rentService: RentService) {
     this.rent = new Rent();
+    this.rent.rentStatus = "IN_PROGRESS";
     this.rent.id = 0;
     this.carId = this.route.snapshot.paramMap.get('carId');
     if(this.carId != null){
       let car = new Car();
       let client = new Client();
       car.id = this.carId;
+      client.id = 1;
+      this.rent.car = car;
+      this.rent.client =client
+    }else{
+      let car = new Car();
+      let client = new Client();
+      car.id = "1";
       client.id = 1;
       this.rent.car = car;
       this.rent.client =client

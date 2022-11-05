@@ -15,28 +15,21 @@ body {
 }
 
 .btn-primary {
-  align-items: center;
-  background-clip: padding-box;
-  background-color: $black;
-  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: .9rem;
   border-radius: 50px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: $white;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 16px;
-  justify-content: center;
-  margin: 0;
-  padding: .3rem 1rem;
-  position: relative;
+  padding: 8px 20px;
+  letter-spacing: .15rem;
+  font-family: 'Signika Negative', sans-serif;
+  margin: 30px 5px;
+  text-align: -webkit-center;
+  display: inline-block;
+  transition: all 0.3s ease-in 0s;
   text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
+  cursor: pointer;
+  color: $white;
+  background: $orange;
+  border: none;
 
   &:active {
     background-color: $orange;

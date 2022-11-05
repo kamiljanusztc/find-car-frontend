@@ -33,8 +33,10 @@ export class CarListComponent {
   }
 
   removeCar(car: Car) {
-    const index = this.cars.indexOf(car);
-    this.cars.splice(index, 1);
+    this.carService.delete(car.id).subscribe(result=>{
+        const index = this.cars.indexOf(car);
+        this.cars.splice(index, 1);
+    })
   }
 
   editCar() {

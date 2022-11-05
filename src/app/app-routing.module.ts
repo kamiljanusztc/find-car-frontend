@@ -7,6 +7,8 @@ import {CarListComponent} from "./components/car-list/car-list.component";
 import {CarFormComponent} from "./components/car-form/car-form.component";
 import {RentListComponent} from "./components/rent-list/rent-list.component";
 import {RentFormComponent} from "./components/rent-form/rent-form.component";
+import {CommentsComponent} from "./cards/comments/comments.component";
+import {ProjectComponent} from "./containers/project/project.component";
 
 const routes: Routes = [
   { path: 'clients', component: ClientListComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'cars', component: CarListComponent },
   { path: 'createcar', component: CarFormComponent },
   { path: 'rents', component: RentListComponent },
+  { path: 'comments', component: CommentsComponent },
+  { path: 'home', component: ProjectComponent },
   { path: 'createrent', component: RentFormComponent }
 ];
 

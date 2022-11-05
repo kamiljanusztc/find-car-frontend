@@ -1,66 +1,50 @@
 <div class="card my-5" id="cars">
-    <div class="card-body">
-        <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Model</th>
-                <th scope="col">Production year</th>
-                <th scope="col">Gearbox</th>
-                <th scope="col">Fuel type</th>
-                <th scope="col">Engine</th>
-                <th scope="col">Car power</th>
-                <th scope="col">Car status</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Save</th>
-                <th scope="col">Remove</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr (ngSubmit)="saveCar(car)" *ngFor="let car of cars">
-                <td>{{ car.id }}</td>
-                <td>
-                    <input [(ngModel)]="car.model" [disabled]="isEnabled" placeholder="{{ car.model }}">
-<!--                    <select [(ngModel)]="car.model" [disabled]="isEnabled" class="form-select" aria-label="audi">-->
-<!--                        <option selected>{{ car.model }}</option>-->
-<!--                        <option value="audi">Audi</option>-->
-<!--                        <option value="bmw">BMW</option>-->
-<!--                        <option value="mercedes">Mercedes</option>-->
-<!--                    </select>-->
-                </td>
-                <td><input [(ngModel)]="car.productionYear" [disabled]="isEnabled" placeholder="{{ car.productionYear }}"></td>
-                <td><input [(ngModel)]="car.gearBox" [disabled]="isEnabled" placeholder="{{ car.gearBox }}"></td>
-                <td><input [(ngModel)]="car.fuelType" [disabled]="isEnabled" placeholder="{{ car.fuelType }}"></td>
-                <td><input [(ngModel)]="car.engine" [disabled]="isEnabled" placeholder="{{ car.engine }}"></td>
-                <td><input [(ngModel)]="car.carPower" [disabled]="isEnabled" placeholder="{{ car.carPower }}"></td>
-                <td><input [(ngModel)]="car.carStatus" [disabled]="isEnabled" placeholder="{{ car.carStatus }}"></td>
-                <td>
-                    <a type="submit" (click)="editCar()"><img [src]="'/assets/icons/icon-edit.svg'"></a>
-                </td>
-                <td>
-                    <a type="submit" (click)="saveCar(car)"><img [src]="'/assets/icons/icon-save.svg'"></a>
-                </td>
-                <td>
-                    <a type="submit" (click)="removeCar(car)"><img [src]="'/assets/icons/icon-trash.svg'"></a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<div class="card-wrapper">
-    <ng-container *ngFor="let car of cars">
-        <app-product
-                [model]="car.model"
-                [productionYear]="car.productionYear"
-                [gearBox]="car.gearBox"
-                [fuelType]="car.fuelType"
-                [engine]="car.engine"
-                [carPower]="car.carPower"
-                [carStatus]="car.carStatus"
-        >
-
-        </app-product>
-    </ng-container>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Model</th>
+        <th scope="col">Production year</th>
+        <th scope="col">Gearbox</th>
+        <th scope="col">Fuel type</th>
+        <th scope="col">Engine</th>
+        <th scope="col">Car power</th>
+        <th scope="col">Car status</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Save</th>
+        <th scope="col">Remove</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr (ngSubmit)="saveCar(car)" *ngFor="let car of cars">
+        <td>{{ car.id }}</td>
+        <td>
+          <input [(ngModel)]="car.model" [disabled]="isEnabled" placeholder="{{ car.model }}">
+          <!--                    <select [(ngModel)]="car.model" [disabled]="isEnabled" class="form-select" aria-label="audi">-->
+          <!--                        <option selected>{{ car.model }}</option>-->
+          <!--                        <option value="audi">Audi</option>-->
+          <!--                        <option value="bmw">BMW</option>-->
+          <!--                        <option value="mercedes">Mercedes</option>-->
+          <!--                    </select>-->
+        </td>
+        <td><input [(ngModel)]="car.productionYear" [disabled]="isEnabled" placeholder="{{ car.productionYear }}"></td>
+        <td><input [(ngModel)]="car.gearBox" [disabled]="isEnabled" placeholder="{{ car.gearBox }}"></td>
+        <td><input [(ngModel)]="car.fuelType" [disabled]="isEnabled" placeholder="{{ car.fuelType }}"></td>
+        <td><input [(ngModel)]="car.engine" [disabled]="isEnabled" placeholder="{{ car.engine }}"></td>
+        <td><input [(ngModel)]="car.carPower" [disabled]="isEnabled" placeholder="{{ car.carPower }}"></td>
+        <td><input [(ngModel)]="car.carStatus" [disabled]="isEnabled" placeholder="{{ car.carStatus }}"></td>
+        <td>
+          <a type="submit" (click)="editCar()"><img [src]="'/assets/icons/icon-edit.svg'"></a>
+        </td>
+        <td>
+          <a type="submit" (click)="saveCar(car)"><img [src]="'/assets/icons/icon-save.svg'"></a>
+        </td>
+        <td>
+          <a type="submit" (click)="removeCar(car)"><img [src]="'/assets/icons/icon-trash.svg'"></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

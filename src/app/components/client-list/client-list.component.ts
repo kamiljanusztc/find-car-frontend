@@ -34,7 +34,7 @@ export class ClientListComponent implements OnInit {
 
   saveClient(client: Client) {
     const index = this.clients.indexOf(client);
-    this.clients.splice(index, 1, {id: (index + 1).toString(), name: client.name, surname: client.surname, login: client.login, email: client.email, phone: client.phone, loginStatus: client.loginStatus });
+    this.clients.splice(index, 1, {id: (index + 1), name: client.name, surname: client.surname, login: client.login, email: client.email, phone: client.phone, loginStatus: client.loginStatus });
     this.isEnabled = true;
   }
 }

@@ -24,8 +24,8 @@
                 <td><input [(ngModel)]="rent.rentStatus" [disabled]="isEnabled" placeholder="{{ rent.rentStatus }}"></td>
                 <td><input [(ngModel)]="rent.cost" [disabled]="isEnabled" placeholder="{{ rent.cost }}"></td>
                 <td><input [(ngModel)]="rent.isPaid" [disabled]="isEnabled" placeholder="{{ rent.isPaid }}"></td>
-                <td><input [(ngModel)]="rent.client" [disabled]="isEnabled" placeholder="{{ rent.client }}"></td>
-                <td><input [(ngModel)]="rent.car" [disabled]="isEnabled" placeholder="{{ rent.car }}"></td>
+                <td><input [(ngModel)]="rent.client.id" [disabled]="isEnabled" placeholder="{{ rent.client.id }}"></td>
+                <td><input [(ngModel)]="rent.car.id" [disabled]="isEnabled" placeholder="{{ rent.car.id }}"></td>
                 <td>
                     <a type="submit" (click)="editRent()"><img [src]="'/assets/icons/icon-edit.svg'"></a>
                 </td>

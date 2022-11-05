@@ -17,6 +17,6 @@ export class RentService {
   }
 
   public save(rent: Rent) {
-    return this.http.post<Rent>(this.rentsUrl, rent);
+    return this.http.post<Rent>(this.rentsUrl+"/newRent", rent);
   }
 }

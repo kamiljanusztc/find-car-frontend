@@ -22,6 +22,10 @@ export class CarService {
     return this.http.post<Car>(this.carsUrl, car);
   }
 
+  public delete(id: string):Observable<Object> {
+    return this.http.delete(this.carsUrl+"/remove/"+id);
+  }
+
   // public save(car: Car) {
   //   return this.http.post<Car>(this.newCarUrl, car);
   // }

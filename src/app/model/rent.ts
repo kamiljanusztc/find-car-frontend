@@ -1,10 +1,13 @@
+import {Car} from "./car";
+import {Client} from "./client";
+
 export class Rent {
-    id: string;
+    id: number;
     dateStart: string;
     dateEnd: string;
     rentStatus: string;
     cost: string;
     isPaid: string;
-    client: string;
-    car: string;
+    client: Client;
+    car: Car;
 }

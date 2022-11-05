@@ -3,7 +3,7 @@
         <form (ngSubmit)="onSubmit()" #rentForm="ngForm">
             <div class="form-group">
                 <label for="dateStart">Date start</label>
-                <input type="text" [(ngModel)]="rent.dateStart"
+                <input type="date" [(ngModel)]="rent.dateStart"
                        class="form-control"
                        id="dateStart"
                        name="dateStart"
@@ -11,20 +11,12 @@
                        required #dateStart="ngModel">
 
                 <label for="dateEnd">Date end</label>
-                <input type="text" [(ngModel)]="rent.dateEnd"
+                <input type="date" [(ngModel)]="rent.dateEnd"
                        class="form-control"
                        id="dateEnd"
                        name="dateEnd"
                        placeholder="Date end"
                        required #dateEnd="ngModel">
-
-                <label for="rentStatus">Rent status</label>
-                <input type="text" [(ngModel)]="rent.rentStatus"
-                       class="form-control"
-                       id="rentStatus"
-                       name="rentStatus"
-                       placeholder="Rent status"
-                       required #rentStatus="ngModel">
 
                 <label for="cost">Cost</label>
                 <input type="text" [(ngModel)]="rent.cost"
@@ -34,16 +26,8 @@
                        placeholder="Cost"
                        required #cost="ngModel">
 
-                <label for="cost">Is paid</label>
-                <input type="text" [(ngModel)]="rent.isPaid"
-                       class="form-control"
-                       id="isPaid"
-                       name="isPaid"
-                       placeholder="Is paid"
-                       required #isPaid="ngModel">
-
                 <label for="cost">Client</label>
-                <input type="text" [(ngModel)]="rent.client"
+                <input type="text" [(ngModel)]="rent.client.id"
                        class="form-control"
                        id="client"
                        name="client"
@@ -51,7 +35,7 @@
                        required #client="ngModel">
 
                 <label for="cost">Car</label>
-                <input type="text" [(ngModel)]="rent.car"
+                <input type="text" [(ngModel)]="rent.car.id"
                        class="form-control"
                        id="car"
                        name="car"

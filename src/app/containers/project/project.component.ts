@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CarService} from "../../services/car.service";
+import {Car} from "../../model/car";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-project',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  cars: Car[];
 
-  ngOnInit(): void {
+  constructor(private carService: CarService, public router: Router) {
+
   }
 
+  ngOnInit() {
+    this.carService.findAll().subscribe(data => {
+      this.cars = data;
+    });
+  }
 }

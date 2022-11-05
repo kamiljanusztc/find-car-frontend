@@ -1,81 +1,83 @@
 <section class="container">
-    <div class="search" id="search">
-        <h2>SEARCH</h2>
-        <div class="bar row">
-            <div class="col-md-3">
-                <p>Brand</p>
-                <select class="form-select" aria-label="audi">
-                    <option selected>Mercedes</option>
-                    <option value="audi">Audi</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <p>Gearbox</p>
-                <select class="form-select" aria-label="automatic">
-                    <option selected>Automatic</option>
-                    <option value="manual">Manual</option>
-                    <option value="automatic">Automatic</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <p>Fuel</p>
-                <select class="form-select" aria-label="petrol">
-                    <option selected>Petrol</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="hybrid">Hybrid</option>
-                    <option value="electric">Electric</option>
-                    <option value="petrol">Petrol</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <p>Power</p>
-                <select class="form-select" aria-label="power">
-                    <option selected> +300 ps </option>
-                    <option value="100"> +100 ps </option>
-                    <option value="200"> +200 ps </option>
-                    <option value="300"> +300 ps </option>
-                </select>
-            </div>
-        </div>
-
-        <ul class="text-left list-inline py-3">
-            <li class="list-inline-item">
-                <a routerLink="/cars" class="btn btn-primary">Car list</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/createcar" class="btn btn-primary">Create car</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/clients" class="btn btn-primary">Client list</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/createclient" class="btn btn-primary">Crete client</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/rents" class="btn btn-primary">Rent list</a>
-            </li>
-            <li class="list-inline-item">
-                <a routerLink="/createrent" class="btn btn-primary">Create rent</a>
-            </li>
-        </ul>
-        <router-outlet></router-outlet>
-
-<!--        <div class="card-wrapper">-->
-<!--            <ng-container *ngFor="let car of cars">-->
-<!--                <app-product-->
-<!--                        [model]="car.model"-->
-<!--                        [productionYear]="car.productionYear"-->
-<!--                        [gearBox]="car.gearBox"-->
-<!--                        [fuelType]="car.fuelType"-->
-<!--                        [engine]="car.engine"-->
-<!--                        [carPower]="car.carPower"-->
-<!--                        [carStatus]="car.carStatus"-->
-<!--                >-->
-
-<!--                </app-product>-->
-<!--            </ng-container>-->
-<!--        </div>-->
+  <div class="search" id="search">
+    <h2>SEARCH</h2>
+    <div class="bar row">
+      <div class="col-md-3">
+        <p>Brand</p>
+        <select class="form-select" aria-label="audi" [(ngModel)]="manufacturer">
+          <option value="Honda">Honda</option>
+          <option value="Acura">Acura</option>
+          <option value="Audi">Audi</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <p>Gearbox</p>
+        <select class="form-select" aria-label="automatic" [(ngModel)]="gearbox">
+          <option selected>Automatic</option>
+          <option value="Manual">Manual</option>
+          <option value="Automatic">Automatic</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <p>Fuel</p>
+        <select class="form-select" aria-label="petrol" [(ngModel)]="fuel">
+          <option value="Diesel">Diesel</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="Electric">Electric</option>
+          <option value="Petrol">Petrol</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <p>Power</p>
+        <select class="form-select" aria-label="power" [(ngModel)]="power">
+          <option value="100"> +100 ps</option>
+          <option value="200"> +200 ps</option>
+          <option value="300"> +300 ps</option>
+        </select>
+      </div>
     </div>
+    <button (click)="searchCars()">Search</button>
+    <button (click)="resetFilters()">Reset filters</button>
+
+    <ul class="text-left list-inline py-3">
+      <li class="list-inline-item">
+        <a routerLink="/cars" class="btn btn-primary">Car list</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/createcar" class="btn btn-primary">Create car</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/clients" class="btn btn-primary">Client list</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/createclient" class="btn btn-primary">Crete client</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/rents" class="btn btn-primary">Rent list</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/createrent" class="btn btn-primary">Create rent</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/comments" class="btn btn-primary">Our comments</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+
+    <div class="card-wrapper" *ngIf="router.url === '/'">
+      <ng-container *ngFor="let car of filteredCars">
+        <app-product
+          [id]="car.id"
+          [model]="car.model"
+          [productionYear]="car.productionYear"
+          [gearBox]="car.gearBox"
+          [fuelType]="car.fuelType"
+          [engine]="car.engine"
+          [carPower]="car.carPower"
+          [carStatus]="car.carStatus"
+        >
+        </app-product>
+      </ng-container>
+    </div>
+  </div>
 </section>

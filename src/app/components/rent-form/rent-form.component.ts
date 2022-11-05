@@ -23,6 +23,7 @@ export class RentFormComponent {
     this.rent.rentStatus = "IN_PROGRESS";
     this.rent.id = 0;
     this.carId = this.route.snapshot.paramMap.get('carId');
+    this.rent.cost = this.getCarCost(300,900);
     if(this.carId != null){
       let car = new Car();
       let client = new Client();
@@ -48,4 +49,7 @@ export class RentFormComponent {
     this.router.navigate(['/rents']);
   }
 
+  getCarCost(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
 }

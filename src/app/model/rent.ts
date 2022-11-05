@@ -6,7 +6,7 @@ export class Rent {
     dateStart: string;
     dateEnd: string;
     rentStatus: string;
-    cost: string;
+    cost: number;
     paid: boolean;
     client: Client;
     car: Car;
